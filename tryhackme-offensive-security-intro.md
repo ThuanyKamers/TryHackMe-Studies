@@ -19,7 +19,7 @@ dirb http://example.com
 
 ![dirb scan results](images/image-2.png)
 
-**Question:** dirb found 2 URLs — which one is more likely to give us access to the fake bank's tools?
+**Question:** dirb found 2 URLs. Which one is more likely to give us access to the fake bank's tools?
 
 **Answer:** `http://fakebank.thm/bank-transfer`
 
