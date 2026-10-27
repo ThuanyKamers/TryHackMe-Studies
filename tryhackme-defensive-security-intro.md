@@ -26,13 +26,7 @@ The monitoring dashboard suggested the attacker might be the ShadowFigure group,
 
 Now we use Fake Bank's threat intelligence system to document what ShadowFigure just did, so other organizations can be warned.
 
-**Question:** Update FakeBank's systems to include what page — and username —
-
-```txt
-ShadowFigures
-```
-
-tried to hack. A green success message will appear. What is the value (flag) of that?
+**Question:** Update FakeBank's systems to include what page — and username — ShadowFigures tried to hack. A green success message will appear. What is the value (flag) of that?
 
 ![Threat Intelligence Platform showing the ShadowFigures profile, known IP addresses and the "Update Threat Intelligence" button](images/image-6.png)
 
