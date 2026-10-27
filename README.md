@@ -11,6 +11,7 @@ This repository contains writeups of security rooms/challenges I've worked throu
 | Room | Topic | Link |
 |---|---|---|
 | Offensive Security Intro | Broken access control / directory enumeration | [writeup](tryhackme-offensive-security-intro.md) |
+| Defensive Security Intro | SOC monitoring / threat intelligence / incident response | [writeup](tryhackme-defensive-security-intro.md) |
 
 ## About me
 
