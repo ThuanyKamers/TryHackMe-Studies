@@ -6,6 +6,8 @@ My cybersecurity learning journey, documented through TryHackMe rooms and other 
 
 This repository contains writeups of security rooms/challenges I've worked through, written in English, as I learn cybersecurity from the ground up. Each writeup documents what I was trying to learn, what I did, any difficulties I ran into, and what I learned.
 
+In some writeups, parts of the text stay close to how the room itself explains a concept. I do that on purpose: reading and then writing it back in my own words is how I fix the information in my memory.
+
 ## Writeups
 
 | Room | Topic | Link |
