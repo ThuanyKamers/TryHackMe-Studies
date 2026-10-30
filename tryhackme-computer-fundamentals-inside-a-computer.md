@@ -20,8 +20,6 @@ Next, the CPU. Its card confirms it processes every instruction and that the mac
 
 ![Central Processing Unit (CPU) item card, showing its function and the CPU socket on the motherboard as its position](images/image-29.png)
 
-![Close-up of the CPU being placed into its socket](images/image-30.png)
-
 ![Close-up of the CPU installed on the motherboard](images/image-31.png)
 
 I see a laptop power charger next. Its card shows it's meant to plug into an external laptop, not this machine, so I discard it too.
@@ -61,6 +59,8 @@ The PSU is also needed.
 The last part is the network adapter.
 
 ![Network Adapter item card, showing its function and the PCIe x1 slot as its position](images/image-43.png)
+
+![Close-up of the network adapter installed in the PCIe x1 slot](images/image-30.png)
 
 With all the parts connected, the power button lights up.
 
