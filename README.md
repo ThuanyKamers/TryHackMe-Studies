@@ -16,6 +16,7 @@ This repository contains writeups of security rooms/challenges I've worked throu
 | Linux Fundamentals (Pt 1) | Linux terminal basics / navigation / grep / shell operators | [writeup](tryhackme-linux-fundamentals-pt1.md) |
 | Computer Fundamentals: Inside a Computer | PC hardware components / assembly / boot process | [writeup](tryhackme-computer-fundamentals-inside-a-computer.md) |
 | Junior Security Analyst Intro | SOC roles / SIEM dashboard / IP reputation / escalation / firewall blocking | [writeup](tryhackme-junior-security-analyst-intro.md) |
+| SOC Role in Blue Team | Security hierarchy / SOC vs CIRT vs specialized roles / internal SOC vs MSSP | [writeup](tryhackme-soc-role-in-blue-team.md) |
 
 ## About me
 
