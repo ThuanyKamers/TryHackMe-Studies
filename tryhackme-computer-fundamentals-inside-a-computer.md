@@ -8,13 +8,13 @@
 **Objective:** Assemble the machine, boot it, find the evidence file, and email it to the senior analyst to close the case.
 
 ## Task: Assembling the machine
-The computer needs 7 parts. Here's everything laid out at the start — the case, all the candidate parts, and the monitor waiting for the machine to be assembled.
+The computer needs 7 parts. Here's everything laid out at the start. I can see the case, all the candidate parts, and the monitor waiting for the machine to be assembled.
 
 ![Lab overview with all components laid out next to the open case, monitor showing "Awaiting machine assembly..."](images/image-27.png)
 
-I start by opening each part to check its description. The first one I pick up is a GPU, but its card says it's integrated into a laptop motherboard — so it's discarded, since it isn't part of this PC.
+I start by opening each part to check its description. The first one I pick up is a GPU, but its card says it's integrated into a laptop motherboard, so it's discarded since it isn't part of this PC.
 
-![Laptop Graphics Processing Unit (GPU) item card, marked as integrated into a laptop motherboard — not used](images/image-28.png)
+![Laptop Graphics Processing Unit (GPU) item card, marked as integrated into a laptop motherboard, not used](images/image-28.png)
 
 Next, the CPU. Its card confirms it processes every instruction and that the machine can't function without it, so I install it in the correct socket.
 
@@ -26,7 +26,7 @@ Next, the CPU. Its card confirms it processes every instruction and that the mac
 
 I see a laptop power charger next. Its card shows it's meant to plug into an external laptop, not this machine, so I discard it too.
 
-![Laptop Power Charger (AC Adapter) item card, marked as external, connected to a wall outlet — not used](images/image-32.png)
+![Laptop Power Charger (AC Adapter) item card, marked as external, connected to a wall outlet, not used](images/image-32.png)
 
 I find a stick of RAM. I already know it belongs, so I install it in the DIMM slots.
 
@@ -72,12 +72,12 @@ I see the case file, which I hadn't opened until now:
 
 ![Case file - Parts & Function, showing Wi-Fi Dongle, I/O Panel, SSD, HDD, GPU and Laptop GPU](images/image-26.png)
 
-Everything looks right — only the hard disk drive doesn't show as checked for some reason, but it was installed.
+Everything looks right. Only the hard disk drive doesn't show as checked for some reason, but it was installed.
 
-## Task: Powering on — wrong drive selected
+## Task: Powering on with the wrong drive selected
 I power the machine on, and this message appears on the screen:
 
-![Boot error screen: WARNING - Mechanical drive detected. Wrong startup drive selected — the computer is using an older mechanical drive (the HDD) as its main storage](images/image-45.png)
+![Boot error screen: WARNING - Mechanical drive detected. Wrong startup drive selected. The computer is using an older mechanical drive (the HDD) as its main storage](images/image-45.png)
 
 I had missed an SSD among the parts.
 
@@ -89,7 +89,7 @@ With it installed, I power the machine on again.
 
 ![Boot screen showing Startup Check Complete, OS Located on SSD, OS Loading into RAM, and "SYSTEM READY. ACCESSING DESKTOP."](images/image-48.png)
 
-Everything checks out — the computer boots into the desktop.
+Everything checks out. The computer boots into the desktop.
 
 ![Desktop showing an "Evidence" folder icon](images/image-49.png)
 
@@ -112,9 +112,9 @@ Opening the Evidence folder brings up a 4-question quiz about the components I j
 
 ![Quiz question 3 of 4: what happens if the CPU is missing, with 4 multiple-choice options](images/image-52.png)
 
-This was an interesting question — I hadn't actually tried booting the computer with parts missing. I could have done that to see what happens with each component, but based on what the case file said about the CPU, nothing else makes sense.
+This was an interesting question. I hadn't actually tried booting the computer with parts missing. I could have done that to see what happens with each component, but based on what the case file said about the CPU, nothing else makes sense.
 
-**Answer:** `c` - Nothing executes — the machine cannot function at all.
+**Answer:** `c` - Nothing executes. The machine cannot function at all.
 
 **Question:** What is the role of the Motherboard (MOBO)?
 
@@ -136,8 +136,8 @@ I sent it to the senior analyst, explaining the situation.
 Room complete.
 
 ## What I learned
-- Each hardware component (CPU, RAM, GPU, PSU, HDD/SSD, I/O panel, network adapter) has one specific job and one correct place on the motherboard or chassis — knowing both is what lets you tell a legitimate part from one that doesn't belong (like a laptop-only GPU or charger).
-- The CPU is the one component without which nothing executes at all — it's what "processes every instruction," so the whole machine depends on it.
+- Each hardware component (CPU, RAM, GPU, PSU, HDD/SSD, I/O panel, network adapter) has one specific job and one correct place on the motherboard or chassis. Knowing both is what lets you tell a legitimate part from one that doesn't belong (like a laptop-only GPU or charger).
+- The CPU is the one component without which nothing executes at all. It's what "processes every instruction," so the whole machine depends on it.
 - Storage type matters for boot behavior: an older mechanical HDD can technically work as a boot drive, but the system flagged it as the "wrong startup drive" in favor of a faster SSD.
-- The motherboard's role is to connect and route communication between every other component — it's the piece that ties the whole machine together, not just a mounting surface.
+- The motherboard's role is to connect and route communication between every other component. It's the piece that ties the whole machine together, not just a mounting surface.
 - Reading documentation/evidence closely (the case file, the parts list) before acting saves time and avoids wasting effort on components that don't belong on the build.

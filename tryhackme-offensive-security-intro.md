@@ -33,5 +33,5 @@ I pasted this domain into the search bar, selected the account we found earlier 
 
 ## What I learned
 - Directory brute-forcing tools like `dirb` can reveal hidden or unlinked pages/endpoints on a website.
-- An endpoint that performs a sensitive action (like a money transfer) must require authentication — otherwise anyone who finds the URL can use it without permission.
+- An endpoint that performs a sensitive action (like a money transfer) must require authentication. Otherwise, anyone who finds the URL can use it without permission.
 - This is a simple but real example of **broken access control**, a very common web vulnerability.

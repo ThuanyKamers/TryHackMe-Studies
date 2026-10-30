@@ -104,5 +104,5 @@ We can see that it didn't overwrite the previous text.
 ## What I learned
 - `whoami` tells you which user you're operating as, which matters because permissions in Linux (and therefore what you're allowed to do) depend on the current user.
 - `ls`, `cd`, `cat` and `pwd` cover almost all basic navigation and file-reading in a Linux terminal, no GUI required.
-- `find` searches for files by name, while `grep` searches for text inside files — a fast way to locate a specific flag or string buried in a large log file.
+- `find` searches for files by name, while `grep` searches for text inside files. It's a fast way to locate a specific flag or string buried in a large log file.
 - Shell operators (`&`, `&&`, `>`, `>>`) let you chain and control commands: run something in the background, run commands in sequence, or redirect output to a file (overwriting with `>` vs. appending with `>>`).

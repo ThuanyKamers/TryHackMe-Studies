@@ -22,11 +22,11 @@ We need to stop the attack as quickly as possible. To do that, we lock the `dave
 **Answer:** `THM{ACCOUNT-LOCKED}`
 
 ## Task: Updating threat intelligence
-The monitoring dashboard suggested the attacker might be the ShadowFigure group, which has been attacking banking organizations before — meaning this wasn't their first attack. In defensive security, we share information about attacks between organizations; this is known as **threat intelligence**.
+The monitoring dashboard suggested the attacker might be the ShadowFigure group, which has been attacking banking organizations before, meaning this wasn't their first attack. In defensive security, we share information about attacks between organizations; this is known as **threat intelligence**.
 
 Now we use Fake Bank's threat intelligence system to document what ShadowFigure just did, so other organizations can be warned.
 
-**Question:** Update FakeBank's systems to include what page — and username — ShadowFigures tried to hack. A green success message will appear. What is the value (flag) of that?
+**Question:** Update FakeBank's systems to include what page and username ShadowFigures tried to hack. A green success message will appear. What is the value (flag) of that?
 
 ![Threat Intelligence Platform showing the ShadowFigures profile, known IP addresses and the "Update Threat Intelligence" button](images/image-6.png)
 

@@ -28,9 +28,9 @@ The Common Vulnerabilities and Exposures (CVE) programme is the closest thing in
 
 Confirmed vulnerabilities are identified in the format `CVE-YEAR-NUMBER`. Very impactful vulnerabilities may get a nickname, like Heartbleed, React2Shell, or Log4Shell. These are given a score (CVSS) based on factors such as:
 
-- **Impact** — what damage can it lead to?
-- **Complexity** — is it easy to exploit?
-- **Availability** — how likely is it that someone can exploit this?
+- **Impact**, what damage can it lead to?
+- **Complexity**, is it easy to exploit?
+- **Availability**, how likely is it that someone can exploit this?
 
 Organizations use this score to prioritize their level of risk. These identifiers let researchers, security tools, and others make sure they're discussing the same issue.
 
@@ -73,6 +73,6 @@ I'll search for `CVE-2026-1337` and look at the repository.
 ## What I learned
 - Internet-wide scanners like Shodan (and similar tools) let you find exposed devices and services by software version, which is useful for correlating known vulnerabilities with real targets.
 - VirusTotal is a fast way to check whether a file has already been identified as malicious by multiple antivirus engines, without running it yourself.
-- CVE identifiers and CVSS scores give everyone — researchers, vendors, defenders — a shared, standardized way to talk about and prioritize the same vulnerability.
+- CVE identifiers and CVSS scores give everyone, like researchers, vendors and defenders, a shared, standardized way to talk about and prioritize the same vulnerability.
 - `man <command>` is the fastest, most reliable way to check a tool's real options and usage instead of guessing or relying on outdated blog posts.
 - GitHub often has proof-of-concept exploits before official advisories are fully published, but PoC code should always be reviewed before execution since it can be malicious or intentionally broken.
