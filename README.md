@@ -15,6 +15,7 @@ This repository contains writeups of security rooms/challenges I've worked throu
 | Search Skills | OSINT tools / Shodan-like scanners / VirusTotal / CVE research / GitHub | [writeup](tryhackme-search-skills.md) |
 | Linux Fundamentals (Pt 1) | Linux terminal basics / navigation / grep / shell operators | [writeup](tryhackme-linux-fundamentals-pt1.md) |
 | Computer Fundamentals: Inside a Computer | PC hardware components / assembly / boot process | [writeup](tryhackme-computer-fundamentals-inside-a-computer.md) |
+| Junior Security Analyst Intro | SOC roles / SIEM dashboard / IP reputation / escalation / firewall blocking | [writeup](tryhackme-junior-security-analyst-intro.md) |
 
 ## About me
 
