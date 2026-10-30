@@ -7,15 +7,8 @@
 
 **Objective:** Assemble the machine, boot it, find the evidence file, and email it to the senior analyst to close the case.
 
-## Task: Checking the case file
-The computer needs 7 parts. Before touching anything, I open the case file's "Parts & Function" tab to see what each component does and where it belongs.
-
-![Case file - Parts & Function, showing CPU, RAM, PSU, Laptop Power Charger and Network Adapter](images/image-25.png)
-
-![Case file - Parts & Function, showing Wi-Fi Dongle, I/O Panel, SSD, HDD, GPU and Laptop GPU](images/image-26.png)
-
 ## Task: Assembling the machine
-Here's everything laid out at the start — the case, all the candidate parts, and the monitor waiting for the machine to be assembled.
+The computer needs 7 parts. Here's everything laid out at the start — the case, all the candidate parts, and the monitor waiting for the machine to be assembled.
 
 ![Lab overview with all components laid out next to the open case, monitor showing "Awaiting machine assembly..."](images/image-27.png)
 
@@ -72,6 +65,14 @@ The last part is the network adapter.
 With all the parts connected, the power button lights up.
 
 ![Close-up of the power button lit up on the case](images/image-44.png)
+
+I see the case file, which I hadn't opened until now:
+
+![Case file - Parts & Function, showing CPU, RAM, PSU, Laptop Power Charger and Network Adapter](images/image-25.png)
+
+![Case file - Parts & Function, showing Wi-Fi Dongle, I/O Panel, SSD, HDD, GPU and Laptop GPU](images/image-26.png)
+
+Everything looks right — only the hard disk drive doesn't show as checked for some reason, but it was installed.
 
 ## Task: Powering on — wrong drive selected
 I power the machine on, and this message appears on the screen:
