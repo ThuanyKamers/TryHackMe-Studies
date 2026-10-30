@@ -112,7 +112,7 @@ Opening the Evidence folder brings up a 4-question quiz about the components I j
 
 ![Quiz question 3 of 4: what happens if the CPU is missing, with 4 multiple-choice options](images/image-52.png)
 
-This was an interesting question. I hadn't actually tried booting the computer with parts missing. I could have done that to see what happens with each component, but based on what the case file said about the CPU, nothing else makes sense.
+Interesting question. I didn't try turning on the computer with parts missing. I really could have done that to understand what happens with each component.
 
 **Answer:** `c` - Nothing executes. The machine cannot function at all.
 
