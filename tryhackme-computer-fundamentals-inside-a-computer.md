@@ -79,7 +79,7 @@ I power the machine on, and this message appears on the screen:
 
 ![Boot error screen: WARNING - Mechanical drive detected. Wrong startup drive selected. The computer is using an older mechanical drive (the HDD) as its main storage](images/image-45.png)
 
-I had missed an SSD among the parts.
+I find an SSD, which I hadn't seen before.
 
 ![Solid State Drive (SSD) item card, labeled THM COLDBOOT 2TB, showing its function and the M.2 slot as its position](images/image-46.png)
 
