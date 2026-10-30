@@ -14,6 +14,7 @@ This repository contains writeups of security rooms/challenges I've worked throu
 | Defensive Security Intro | SOC monitoring / threat intelligence / incident response | [writeup](tryhackme-defensive-security-intro.md) |
 | Search Skills | OSINT tools / Shodan-like scanners / VirusTotal / CVE research / GitHub | [writeup](tryhackme-search-skills.md) |
 | Linux Fundamentals (Pt 1) | Linux terminal basics / navigation / grep / shell operators | [writeup](tryhackme-linux-fundamentals-pt1.md) |
+| Computer Fundamentals: Inside a Computer | PC hardware components / assembly / boot process | [writeup](tryhackme-computer-fundamentals-inside-a-computer.md) |
 
 ## About me
 
