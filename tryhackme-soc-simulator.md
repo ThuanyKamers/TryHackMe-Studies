@@ -7,11 +7,11 @@ Close all true positive alerts.
 - Create detailed case reports based on your observations to help your team understand the full scope of alerts and malicious activity
 
 ## Task: Alert 8815, suspicious Amazon email
-When the SOC Simulator starts, I'm met with this:
+When the SOC Simulator starts, this is what I see:
 
 ![SOC Simulator dashboard for "Introduction to Phishing", showing 0 total alerts, 0 closed alerts, 0 closed as TP and 0 closed as FP](images/image-67.png)
 
-I go to Alert Queue, but there's nothing there yet.
+I go to the Alert Queue, but there's nothing there yet.
 
 ![Alert queue page, with a message saying I haven't picked up any alert yet](images/image-68.png)
 
@@ -19,63 +19,55 @@ So I open the documentation to read it.
 
 ![Documentation page, Welcome tab, explaining the SOC Simulator and linking to the Introduction to Phishing room](images/image-69.png)
 
-In the documentation I find the first step by step, so I continue.
+In the documentation I find the first step-by-step guide, so I follow it.
 
 ![Alert triage tab of the documentation, listing the Alert Triage Playbook: Initial Alert Review, Investigate in the SIEM, Resolution and Closure](images/image-70.png)
 
-I find 2 alerts, so I open the most recent one.
+There are 2 alerts, so I open the most recent one.
 
 ![Open alerts list showing two "Inbound Email Containing Suspicious External Link" alerts, IDs 8815 and 8814, both Medium severity](images/image-71.png)
 
 ![Alert queue showing alerts 8815 and 8814 awaiting action, with 3 more alerts incoming](images/image-72.png)
 
-8815 is the most recent, I click the little person icon with a + to assign it to myself.
-
-I read the description.
+8815 is the most recent one, so I click the little person icon with a + to assign it to myself and read the description.
 
 ![Assigned alert 8815 detail, "Inbound Email Containing Suspicious External Link", showing the full email: sender urgents@amazon.biz, recipient h.harris@thetrydaily.thm, subject "Your Amazon Package Couldn't Be Delivered"](images/image-73.png)
 
-I understand that the alert came from suspicious links by email, which looks like a phishing attempt. What catches my attention first is the email saying urgent, and after the @ there's amazon.biz, what would that .biz be? Normally it would be .com.
+The alert came from a suspicious link in an email, which looks like a phishing attempt. The first thing that catches my attention is the sender address: it says urgent, and after the @ there's amazon.biz. What is that .biz doing there? It should normally be .com.
 
-I see which email it was sent to, h.harris@thetrydaily.thm.
+The email was sent to h.harris@thetrydaily.thm.
 
-It also catches my attention that the body of the email starts with dear customer, and not the client's name. It's also very common in phishing emails to use urgency, which happens both in the email address and in the body of the email, saying that if the person doesn't click the link within 48 hours, the package will be returned.
+It also catches my attention that the body starts with "dear customer" instead of the actual client's name. Urgency is another common phishing trait, which shows up both in the sender address and in the body, warning that the package will be returned if the recipient doesn't click the link within 48 hours.
 
-I click the Playbook link.
-
-This page opens.
+I click the Playbook link, which opens this page:
 
 ![Phishing Email Analysis playbook diagram: Assign Alert, Alert Triaging Process, Analyze Email Artifacts (Check Sender Reputation, Review Attachments), Investigate Related Alerts, Case Reporting](images/image-74.png)
 
-I understand what my next steps are.
+Now I understand what my next steps are.
 
-I go back to the documentation and it says to open the SIEM.
+Back in the documentation, it says to open the SIEM.
 
 ![Sidebar navigation showing Dashboard, Alert queue, SIEM, TryDetectThis, and Documentation highlighted](images/image-75.png)
 
-I click on SIEM and this page opens.
+Clicking on SIEM opens this page:
 
 ![Splunk Enterprise search page, 87 of 87 events matched, showing a list of raw security events](images/image-76.png)
 
-I go back to the Alert Queue and see the alert happened at 5:06pm, so I search for this email in the SIEM with this time.
-
-I found it.
+Back in the Alert Queue, I see the alert happened at 5:06pm, so I search the SIEM for this email around that time, and find it.
 
 ![Splunk event at 5:06:18.543 PM matching the alert: the Amazon package phishing email, sender urgents@amazon.biz, recipient h.harris@thetrydaily.thm](images/image-77.png)
 
-I open TryDetectThis, as the documentation said, and see that I can put in links, IPs and files to analyze.
-
-I go back to the alert and copy the link.
+I open TryDetectThis, as the documentation suggested, and see I can analyze links, IPs and files there. I go back to the alert and copy the link.
 
 ![Zoomed in email content showing the bit.ly shortened link in the body of the Amazon phishing email](images/image-78.png)
 
 ![TryDetectThis URL/IP Check page with the bit.ly link pasted in, ready to analyze](images/image-79.png)
 
-Malicious status showed up, as I suspected.
+The result comes back malicious, as I suspected.
 
 ![TryDetectThis result: URL/IP Analysis Complete, Status: MALICIOUS](images/image-80.png)
 
-The documentation says I should correlate the alert data with other data sources to validate the credibility of the alert, but I still don't know how to do this.
+The documentation says I should correlate the alert data with other data sources to validate its credibility, but I'm still not sure how to do that.
 
 Now I need to click write case report on the alert and follow the alert reporting documentation.
 
@@ -83,29 +75,23 @@ Now I need to click write case report on the alert and follow the alert reportin
 
 ![Alert Classification tab of the documentation, listing when alert escalation is and isn't required](images/image-82.png)
 
-In the documentation I see that phishing is not escalated if it was quarantined before users had a chance to access the malicious email.
+The documentation says phishing isn't escalated if it was quarantined before users had a chance to access the malicious email. I don't know yet whether the user opened it, but I think I can check that in the SIEM. I search again from 5:06pm onward and find no access to the phishing site from this email.
 
-I don't know if the user accessed the email, I believe I might be able to see this in the SIEM.
-
-I opened the SIEM, went again from 5:06pm onward and there was no access to the phishing site from this email.
-
-I put True positive on the case report.
-
-This incident report opened.
+I mark the case report as True positive.
 
 ![Blank incident report form for 8815, with fields for incident classification, case report and escalation](images/image-83.png)
 
-The incident data is above.
+The incident data is shown above.
 
 ![Case report summary for event ID 8815, showing the alert rule, description, incident type Phishing, severity Medium, and detection time Nov 2nd 2026 at 18:08](images/image-84.png)
 
-Strange that the detection time says it was 6:08pm. It means the system takes longer to detect the phishing, and it was more than 1 hour later.
+It's strange that the detection time says 6:08pm, more than an hour after the actual activity. That must mean the system takes a while to detect this kind of phishing.
 
-I fill out the report this way.
+I fill out the report this way:
 
 ![Incident report for 8815 filled in: Time of activity 17:06, Reason for Classifying as True Positive explaining TryDetectThis flagged the link as malicious and the phishing characteristics in the email, escalation set to No](images/image-85.png)
 
-I still don't really know how to fill everything in, even looking at the documentation, it wasn't very clear to me.
+I'm still not entirely sure how to fill everything in. Even with the documentation open, it wasn't very clear to me.
 
 I click submit and close alert.
 
@@ -114,70 +100,58 @@ I click submit and close alert.
 I continue the training.
 
 ## Task: Alert 8816, blocked firewall connection
-I look at the Alert queue.
+I check the Alert queue.
 
 ![Alert queue showing 8818, 8817, 8816 and 8814 awaiting action, and 8815 closed](images/image-87.png)
 
-I pull the one with high severity for myself.
+I pick up the one with high severity.
 
 ![Assigned alert 8816 detail, "Access to Blacklisted External URL Blocked by Firewall", High severity, showing the same bit.ly URL blocked by the firewall](images/image-88.png)
 
-Right away I see it's the same link from the previous alert, so the employee had actually clicked the link, I hadn't seen that in the SIEM.
+Right away I notice it's the same link from the previous alert, which means the employee had actually clicked it, something I hadn't picked up on in the SIEM. The timestamp is just 1 minute after the email was received.
 
-The time was just 1 minute after receiving the email.
-
-I go back to the SIEM and find the access.
+I go back to the SIEM and find the access attempt.
 
 ![Splunk event at 5:07:32.543 PM showing the firewall blocking the connection to the bit.ly URL](images/image-89.png)
 
-I hadn't seen it before, it went unnoticed by me, I lacked attention.
+I hadn't caught this before. It went unnoticed, I wasn't paying enough attention.
 
 I click write case report.
 
 ![Close alert modal for event ID 8816, with True positive selected and a Write case report button](images/image-90.png)
 
-I click true positive.
-
-And this time I'm going to put that it needs to be escalated, because the employee clicked the link.
-
-I fill it out this way:
+I mark it true positive, and this time I set it to escalate, since the employee did click the link.
 
 ![Incident report for 8816 filled in with escalation set to Yes](images/image-91.png)
 
-It occurs to me that maybe it didn't need to be escalated, because the incident reports that the firewall or proxy blocked the outbound request, preventing connections.
-
-I go back to the documentation and see it would need to be escalated if there were bigger incidents because of this access, but since the firewall or proxy blocked it before that, it doesn't need to be. So I switch to No on the escalation.
+Then it occurs to me that it might not need escalation after all, since the incident report says the firewall or proxy blocked the outbound request and prevented the connection. Checking the documentation again, escalation is only needed if a bigger incident resulted from this access, and since it was blocked beforehand, it doesn't apply here. So I switch the escalation back to No.
 
 ![Incident report for 8816 with escalation switched to No](images/image-92.png)
 
-Incident closed, I take the next most recent one for myself.
+With this incident closed, I pick up the next most recent alert.
 
 ## Task: Alerts 8818 and 8814, HR onboarding phishing
-Looks like another phishing.
+This one looks like another phishing attempt.
 
 ![Assigned alert 8818 detail, "Inbound Email Containing Suspicious External Link", an onboarding email from onboarding@hrconnex.thm to j.garcia@thetrydaily.thm with a profile setup link](images/image-93.png)
 
-I see there seems to be a way to check the proxy and firewall logs to understand if there were attempts to access the link and whether the connections were allowed or blocked. I need to find where I do this.
+There seems to be a way to check the proxy and firewall logs, to see whether there were any access attempts to the link and whether those connections were allowed or blocked. I need to find where to do that.
 
-Right away I see the email was sent from an HR employee, apparently.
+At first glance, the email looks like it's from an HR employee. The body even mentions the employee's name, which is a point against it being phishing, though not enough to rule it out entirely.
 
-The body of the email mentions the employee's name, which is a point toward ruling out a phishing attempt, but not entirely yet.
-
-I copy the URL that is apparently for a training.
+I copy the URL, which is apparently for a training.
 
 ![Zoomed in email content showing the hrconnex.thm onboarding link](images/image-94.png)
 
-I try to open TryDetectThis, but the page doesn't load.
+I try to open TryDetectThis, but the page won't load.
 
 ![TryDetectThis page stuck on a loading message](images/image-95.png)
 
-I do a quick search on Google.
+I do a quick Google search.
 
 ![Google search for "trydetectthis not opening" with an AI overview suggesting it's a local script loading issue](images/image-96.png)
 
-I manage to use TryDetectThis through the link.
-
-There's no detection/record of this link in TryDetectThis.
+I manage to get TryDetectThis working through the link, but there's no detection or record of this URL in the tool.
 
 ![TryDetectThis result: "No results found, no cached reports found for https://hrconnex.thm/onboarding/15400654060/j.garcia"](images/image-97.png)
 
@@ -185,45 +159,39 @@ I find the email in the SIEM.
 
 ![Splunk event at 5:09:04.543 PM matching the onboarding phishing email](images/image-98.png)
 
-In the documentation I see there's a list of employee emails. I look for the sender email from the incident and don't find it on the list.
+The documentation has a list of employee emails, so I look for the sender from this incident, but it isn't on the list.
 
 ![Company information tab of the documentation, Employees table with name, department, email, logged-in host and IP address](images/image-99.png)
 
-I see I can search TryDetectMe by IP, but I can't find the IP of the email sender.
-
-I go back to the SIEM and see there's an arrow I can click on in the alert:
+I can also search TryDetectThis by IP, but I can't find the sender's IP anywhere. Back in the SIEM, there's an arrow I can click on the alert for more detail.
 
 ![Splunk event expanded, showing the full field list for the onboarding phishing email](images/image-100.png)
 
-This opens up a lot more information, but I don't find the IP I need, and I don't understand the information very well.
+That opens up a lot more information, but I still can't find the IP I need, and I don't fully understand everything that's shown.
 
-I click on sender to see information about the supposed HR email.
+I click on sender to see more about the supposed HR email.
 
 ![Splunk "sender" field popup, showing top values including onboarding@hrconnex.thm](images/image-101.png)
 
-I click on onboarding@hrconnex.thm which is the sender email of the supposed HR.
-
-This opens another page in the SIEM.
+Clicking on onboarding@hrconnex.thm, the sender behind the supposed HR email, opens another page in the SIEM.
 
 ![Splunk search for sender="onboarding@hrconnex.thm", 2 of 3 events matched, showing the same onboarding email at 5:09:04.543 PM and 5:03:05.543 PM](images/image-102.png)
 
-Here there are 2 activities from this email, one at 5:03pm and one at 5:09pm.
-
-The 5:03pm email also showed up in the alerts:
+This sender has 2 recorded activities, one at 5:03pm and one at 5:09pm. The 5:03pm email also shows up among the alerts.
 
 ![Assigned alert 8814 detail, the same onboarding phishing email sent at 17:03:05.543, still awaiting action](images/image-103.png)
 
-I open the splunk server and click on the IP.
+I open the Splunk server and click on the IP.
 
 ![Splunk "splunk_server" field popup showing a single value, ip-10-10-40-195, 100% of events](images/image-104.png)
 
-There are only the same two emails sent from the supposed HR, nothing more.
+There's nothing there besides the same two emails from the supposed HR sender.
 
-Since I can't find the IP, but this email is clearly from an HR account, yet it isn't on the employee email list, and our HR has a different email on the list, and on top of that, there were two identical emails, I'm going to mark it as phishing.
+I still can't find the IP, but this email is clearly pretending to be HR: it isn't on the employee list, our real HR has a different address on file, and the same message was sent twice. Based on all of that, I mark it as phishing.
 
 ![Incident report for 8818 filled in: List of Attack Indicators noting the email pretends to be HR but isn't in the employee list, and there are 2 identical emails from the same sender](images/image-105.png)
 
-Since there's another alert with the same situation, I'm going to close it too.
+Since the other alert is the same situation, I close it too.
 
 ![Assigned alert 8814 detail again, ready to be closed with the same reasoning](images/image-106.png)
 
@@ -232,19 +200,15 @@ The last alert is this one:
 
 ![Assigned alert 8817 detail, "Unusual Sign-In Activity on Your Microsoft Account", sender no-reply@m1crosoftsupport.co, recipient c.allen@thetrydaily.thm](images/image-107.png)
 
-Right away, I can already see it's really phishing. The sender email uses @m1crosoft with a 1 in place of the i.
+This one is obviously phishing right away: the sender address uses @m1crosoft, with a 1 standing in for the i. This time the body does use the employee's actual name, which suggests whoever sent it is a bit more experienced at phishing.
 
-This time the body of the email uses the employee's name, indicating they're a bit more experienced at phishing.
-
-I copy the link to TryDetectThis, but it isn't on the list of malicious links yet.
+I copy the link to TryDetectThis, but it isn't on the list of known malicious links yet.
 
 ![TryDetectThis result: "No results found, no cached reports found for https://m1crosoftsupport.co/login"](images/image-108.png)
 
-The email isn't in the SIEM.
+The email doesn't show up in the SIEM either, and there's no record of anyone accessing the link.
 
-There's also no access to the link in the SIEM.
-
-I'm going to close it as true positive based on the phishing characteristics analysis already done.
+Based on the phishing characteristics I already identified, I close it as a true positive.
 
 ![Incident report for 8817 filled in: List of Attack Indicators noting the sender pretends to be Microsoft, using a 1 instead of an i: m1crosoft](images/image-109.png)
 
@@ -253,26 +217,24 @@ After closing all the incidents, I get some feedback:
 
 ![True positives summary table: alerts 8818 and 8814 marked Incorrect, alerts 8815, 8816 and 8817 marked Correct, with an AI overall analysis saying the reports are missing key details](images/image-110.png)
 
-As I imagined, information was missing from the incident report.
-
-I have feedback on this report:
+As I expected, my incident reports were missing information. Here's the detailed feedback on one of them:
 
 ![Incident report for 8815, same as before, shown again alongside the detailed AI feedback](images/image-85.png)
 
-I should have included in this information that the email was signed as "Amazon Delivery", but was sent from a domain that isn't amazon.com. Also, while I mentioned urgency, I didn't specify that the email warned the package would be returned to the sender unless the recipient replied within 48 hours. I have to be explicit about the mechanisms used to put pressure on the victim. The link in the email is a bit.ly shortened URL. These shortened links hide the real destination, which is a red flag I should make explicit. I have to explain what the attacker wanted to do next: the email directed the user to confirm the package delivery or personal information through the link, which was the attacker's goal. I need to check the firewall logs for the link. The recipient's workstation tried to open the link and the firewall blocked the connection. This is critical because it determines whether an escalation is necessary. I also need to search the sender's email logs to confirm whether any other user received the same email. Only the recipient received it, which is important scope information. I need to cover the 5 Ws. I reported When: 17:06, but I didn't identify Who was affected (h.harris@thetrydaily.thm), Who sent it (urgents@amazon.biz), What the subject line was, or What the malicious link was. These are essential details that should appear in every report.
+I should have noted that the email was signed "Amazon Delivery" but came from a domain that isn't amazon.com. I mentioned urgency, but didn't spell out that the email threatened to return the package unless the recipient replied within 48 hours. I need to be explicit about the exact mechanisms used to pressure the victim. The link itself is a bit.ly shortened URL, and shortened links hiding the real destination is a red flag I should call out directly. I also need to explain the attacker's actual goal: getting the user to confirm the delivery, or hand over personal information, through that link. The firewall logs matter too: the recipient's workstation tried to open the link, and the firewall blocked the connection, which is exactly what determines whether escalation is needed. On top of that, I should check the sender's email logs to confirm whether anyone else received the same message; in this case, only the one recipient did, which is useful scope information. Overall, I need to cover the 5 Ws properly. I only reported When (17:06), but left out Who was affected (h.harris@thetrydaily.thm), Who sent it (urgents@amazon.biz), What the subject line was, and What the malicious link actually was. These are details every report needs.
 
-Well, I believed the information provided in the alerts would be enough, and that I wouldn't need to rewrite everything. I see that I do need to.
+I assumed the information already in the alerts would be enough, and that I wouldn't have to write everything out again, but it turns out I do.
 
-The next ones will definitely be much better than this one.
+The next reports will definitely be better than this one.
 
-Also, I discovered there's a room to learn how to use this SOC simulator, focused on phishing, which I'm going to do right now.
+I also found out there's a dedicated room for learning this SOC Simulator, focused on phishing, so I'm going to do that one next.
 
 ![SOC Simulator: Introduction to Phishing room card, "Play your first SOC Simulator scenario and learn to triage phishing alerts, one alert at a time", 45 min](images/image-111.png)
 
 ## What I learned
 - A phishing report needs the 5 Ws spelled out explicitly (who, what, when, where, why/how), even when the alert description already contains some of that information. Writing "it was flagged as malicious" isn't enough; the report has to state exactly what was malicious, who sent it, who received it, and when.
 - A shortened URL (like a bit.ly link) is itself a red flag worth calling out in a report, because it hides the real destination from the recipient.
-- Escalation isn't automatic just because an alert is a true positive. If a control like a firewall or proxy already blocked the malicious connection, the alert can stay closed without escalation, but if the user actually reached the malicious link, that's a reason to escalate.
+- Escalation isn't automatic just because an alert is a true positive. If a control like a firewall or proxy already blocked the malicious connection, the alert can stay closed without escalation, but if the employee actually reached the malicious link, that's a reason to escalate.
 - Cross-referencing an email sender against the official employee list is a fast way to catch HR or internal-sounding phishing that doesn't come from a real employee address, especially when the real department already has a different address on file.
 - Typosquatted domains (like m1crosoftsupport.co or amazon.biz instead of a .com address) are often enough on their own to classify an alert as phishing, even without a detection hit in a tool like TryDetectThis.
 - Case reports are judged on completeness, not just on getting the classification right. Closing an alert correctly as a true positive still scored as "incorrect" when the report itself was missing the required details.
