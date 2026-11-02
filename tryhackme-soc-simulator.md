@@ -151,7 +151,7 @@ I do a quick Google search.
 
 ![Google search for "trydetectthis not opening" with an AI overview suggesting it's a local script loading issue](images/image-96.png)
 
-I manage to get TryDetectThis working through the link, but there's no detection or record of this URL in the tool.
+I manage to get TryDetectThis working through the link, and there's no detection or record of this URL in the tool.
 
 ![TryDetectThis result: "No results found, no cached reports found for https://hrconnex.thm/onboarding/15400654060/j.garcia"](images/image-97.png)
 
