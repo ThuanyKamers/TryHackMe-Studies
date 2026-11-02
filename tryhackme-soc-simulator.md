@@ -1,10 +1,12 @@
 # TryHackMe - SOC Simulator
 
-**Objective:** Close all true positive alerts.
+## Objective
+Close all true positive alerts.
 - Monitor and analyze real-time alerts
 - Identify and document critical events such as suspicious emails and attachments
 - Create detailed case reports based on your observations to help your team understand the full scope of alerts and malicious activity
 
+## Task: Alert 8815, suspicious Amazon email
 When the SOC Simulator starts, I'm met with this:
 
 ![SOC Simulator dashboard for "Introduction to Phishing", showing 0 total alerts, 0 closed alerts, 0 closed as TP and 0 closed as FP](images/image-67.png)
@@ -111,6 +113,7 @@ I click submit and close alert.
 
 I continue the training.
 
+## Task: Alert 8816, blocked firewall connection
 I look at the Alert queue.
 
 ![Alert queue showing 8818, 8817, 8816 and 8814 awaiting action, and 8815 closed](images/image-87.png)
@@ -149,6 +152,7 @@ I go back to the documentation and see it would need to be escalated if there we
 
 Incident closed, I take the next most recent one for myself.
 
+## Task: Alerts 8818 and 8814, HR onboarding phishing
 Looks like another phishing.
 
 ![Assigned alert 8818 detail, "Inbound Email Containing Suspicious External Link", an onboarding email from onboarding@hrconnex.thm to j.garcia@thetrydaily.thm with a profile setup link](images/image-93.png)
@@ -223,6 +227,7 @@ Since there's another alert with the same situation, I'm going to close it too.
 
 ![Assigned alert 8814 detail again, ready to be closed with the same reasoning](images/image-106.png)
 
+## Task: Alert 8817, Microsoft sign-in phishing
 The last alert is this one:
 
 ![Assigned alert 8817 detail, "Unusual Sign-In Activity on Your Microsoft Account", sender no-reply@m1crosoftsupport.co, recipient c.allen@thetrydaily.thm](images/image-107.png)
@@ -243,6 +248,7 @@ I'm going to close it as true positive based on the phishing characteristics ana
 
 ![Incident report for 8817 filled in: List of Attack Indicators noting the sender pretends to be Microsoft, using a 1 instead of an i: m1crosoft](images/image-109.png)
 
+## Task: Reviewing my feedback
 After closing all the incidents, I get some feedback:
 
 ![True positives summary table: alerts 8818 and 8814 marked Incorrect, alerts 8815, 8816 and 8817 marked Correct, with an AI overall analysis saying the reports are missing key details](images/image-110.png)
