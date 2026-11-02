@@ -19,6 +19,7 @@ In some writeups, parts of the text stay close to how the room itself explains a
 | Computer Fundamentals: Inside a Computer | PC hardware components / assembly / boot process | [writeup](tryhackme-computer-fundamentals-inside-a-computer.md) |
 | Junior Security Analyst Intro | SOC roles / SIEM dashboard / IP reputation / escalation / firewall blocking | [writeup](tryhackme-junior-security-analyst-intro.md) |
 | SOC Role in Blue Team | Security hierarchy / SOC vs CIRT vs specialized roles / internal SOC vs MSSP | [writeup](tryhackme-soc-role-in-blue-team.md) |
+| SOC Simulator | Phishing alert triage / SIEM investigation / TryDetectThis / case reporting / escalation | [writeup](tryhackme-soc-simulator.md) |
 
 ## About me
 
