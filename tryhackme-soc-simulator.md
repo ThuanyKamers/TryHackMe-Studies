@@ -119,7 +119,7 @@ I pull the one with high severity for myself.
 
 ![Assigned alert 8816 detail, "Access to Blacklisted External URL Blocked by Firewall", High severity, showing the same bit.ly URL blocked by the firewall](images/image-88.png)
 
-Right away I see it's the same link from the previous alert, so he had actually clicked the link, I hadn't seen that in the SIEM.
+Right away I see it's the same link from the previous alert, so the employee had actually clicked the link, I hadn't seen that in the SIEM.
 
 The time was just 1 minute after receiving the email.
 
@@ -135,7 +135,7 @@ I click write case report.
 
 I click true positive.
 
-And this time I'm going to put that it needs to be escalated, because the guy clicked the link.
+And this time I'm going to put that it needs to be escalated, because the employee clicked the link.
 
 I fill it out this way:
 
