@@ -21,6 +21,7 @@ In some writeups, parts of the text stay close to how the room itself explains a
 | SOC Role in Blue Team | Security hierarchy / SOC vs CIRT vs specialized roles / internal SOC vs MSSP | [writeup](tryhackme-soc-role-in-blue-team.md) |
 | SOC Simulator | Phishing alert triage / SIEM investigation / TryDetectThis / case reporting / escalation | [writeup](tryhackme-soc-simulator.md) |
 | SOC Simulator: Introduction to Phishing | Phishing triage methodology / 5 Ws / false vs true positives / escalation templates | [writeup](tryhackme-soc-simulator-intro-to-phishing.md) |
+| SOC L1 Alert Triage | Alert anatomy / prioritisation rules / triage cycle / false vs true positive verdicts | [writeup](tryhackme-soc-l1-alert-triage.md) |
 
 ## About me
 
