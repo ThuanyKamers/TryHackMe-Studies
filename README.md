@@ -22,6 +22,7 @@ In some writeups, parts of the text stay close to how the room itself explains a
 | SOC Simulator | Phishing alert triage / SIEM investigation / TryDetectThis / case reporting / escalation | [writeup](tryhackme-soc-simulator.md) |
 | SOC Simulator: Introduction to Phishing | Phishing triage methodology / 5 Ws / false vs true positives / escalation templates | [writeup](tryhackme-soc-simulator-intro-to-phishing.md) |
 | SOC L1 Alert Triage | Alert anatomy / prioritisation rules / triage cycle / false vs true positive verdicts | [writeup](tryhackme-soc-l1-alert-triage.md) |
+| SOC L1 Alert Reporting | Five Ws reporting / escalation guide / requesting L2 support / crisis communication | [writeup](tryhackme-soc-l1-alert-reporting.md) |
 
 ## About me
 
